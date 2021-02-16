@@ -231,6 +231,8 @@ xmlns:fb="https://www.facebook.com/2008/fbml">
         $('#primary-slider').hide();
         $('#start').on('click', function() {
             // Grab elements, create settings, etc.
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+
             canvas = document.getElementById('canvas');
             context = canvas.getContext('2d');
             video = document.getElementById('video');
