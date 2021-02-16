@@ -3,16 +3,35 @@
 xmlns:og="http://ogp.me/ns#"
 xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-<title>Dior Photo</title>
-<link rel="shortcut icon" href="/favicon.ico">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <!-- For Facebook -->
+<meta property="og:url"                content="https://booth.nosediorfilm.com/" />
+<meta property="og:type"               content="website" />
+<meta property="og:title"              content="NOSE - A SMELL GOOD MOVIE BY Clément Beauvais & Arthur de Kersauson" />
+<meta property="og:description"        content="Inside Dior’s world of perfume" />
+<meta property="og:image"              content="https://booth.nosediorfilm.com/img/poster-prev.jpg" />
+<meta property="og:site_name" content="A SMELL GOOD MOVIE BY Clément Beauvais & Arthur de Kersauson">
+
+<title>Dior Photobooth - NOSE - A SMELL GOOD MOVIE BY Clément Beauvais & Arthur de Kersauson</title>
+
+<link rel="icon" href="https://nosediorfilm.com/wp-content/uploads/2020/09/lock-icon.png" sizes="32x32" />
+<link rel="icon" href="https://nosediorfilm.com/wp-content/uploads/2020/09/lock-icon.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://nosediorfilm.com/wp-content/uploads/2020/09/lock-icon.png" />
+<meta name="msapplication-TileImage" content="https://nosediorfilm.com/wp-content/uploads/2020/09/lock-icon.png" />
+
 <meta charset="UTF-8">
 
-<meta name="description" content="Tomate la mejor foto con nuestros filtros!">
+<meta name="description" content="Inside Dior’s world of perfume">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <meta name="apple-mobile-web-app-capable" content="yes">
 
+
+<!-- For Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="NOSE" />
+<meta name="twitter:description" content="Inside Dior’s world of perfume" />
+<meta name="twitter:image" content="https://booth.nosediorfilm.com/img/poster-prev.jpg" />
+<meta name="twitter:image:alt" content="A SMELL GOOD MOVIE BY Clément Beauvais & Arthur de Kersauson">
 <link href="https://fonts.googleapis.com/css?family=Rubik:100,200,400,900" rel="stylesheet">
 <script src="https://kit.fontawesome.com/c3dc277a66.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -33,24 +52,25 @@ var site_url="https://nosephotobooth.com/beta/";
     <div class="demo-wrapper">
     <div class="row">
         <div class="col-12 col-sm-4 ">
-            <div class="logo"><img src="img/dior-logo.svg"></div>
+            <div class="logo wow fadeIn "  data-wow-duration="2s" data-wow-delay="0.5s"><img src="img/dior-logo.svg"></div>
     </div>
     <div class="col-12 col-sm-4 ">
-       <div class="top--text">Inside Dior’s world of perfume</div>
-       <div class="nose-logo"><img class="nose-logo" src="img/nose-logo.svg"></div>
+       <div class="top--text wow fadeIn"   data-wow-duration="2s" data-wow-delay="0.75s" >Inside Dior’s world of perfume</div>
+       <div class="nose-logo wow fadeIn" data-wow-duration="2s" data-wow-delay="1s"><img class="nose-logo" src="img/nose-logo.svg"></div>
     </div>
     </div>
     <div class="row booth">
 
         <div class="col-12 col-sm-4 "></div>
-        <div class="col-12 col-sm-4 ">
-           <div id="preview-img" class="preview-img"><img width="100%" src="frame-ex.jpg">
-            <div class="aditional-text">
+        <div class="col-12 col-sm-4 wow fadeIn" data-wow-duration="2s" data-wow-delay="1.25s">
+           <div id="preview-img" class="preview-img "><img width="100%" src="frame-ex.jpg">
+            <div class="aditional-text wow fadeIn" data-wow-duration="2s" data-wow-delay="0.7s" >
                 A SMELL GOOD MOVIE BY <br><span> Clément Beauvais & Arthur de Kersauson</span>
             </div>
         </div>
-           <div id="preview-video" class="preview-video"><video  autoplay loop muted playsinline  id="video" autoplay></video>
-            <img class="img-oculta" src="frame.png">
+           <div id="preview-video" class="preview-video">
+            <video  autoplay loop muted playsinline  id="video" autoplay class="wow fadeIn" data-wow-duration="2s" data-wow-delay="1.25s"></video>
+            <img class="img-oculta wow fadeIn" data-wow-duration="3s" src="frame.png">
              </div>
              <div  id="adt1" class="aditional-text" style="display: none;">
                 A SMELL GOOD MOVIE BY <br><span> Clément Beauvais & Arthur de Kersauson</span>
@@ -58,10 +78,10 @@ var site_url="https://nosephotobooth.com/beta/";
            
         </div>
         <div class="col-12 col-sm-4 ">
-            <div id="start">
+            <div id="start" class="wow fadeIn" data-wow-duration="2s" data-wow-delay="2.5s" >
                 <button class="start">START</button>
              </div>
-             <div id="snap">
+             <div id="snap" class="wow fadeIn" data-wow-duration="2s"  data-wow-delay="2.5s">
                 <button class="start">TAKE A PHOTO</button>
               </div>
         </div>
@@ -72,7 +92,7 @@ var site_url="https://nosephotobooth.com/beta/";
         <div class="col-12 col-sm-4 ">
             <div style="width:100%; margin: auto;">
                 <canvas class="copyable" id="canvas"  width="320px" height="600px"></canvas>
-                <div id="primary-slider" height="auto">
+                <div id="primary-slider" height="auto" class="wow fadeIn" >
                     <img width="100%" src="frame.png">
                 </div>
                 <div id="adt2" class="aditional-text" style="display: none;">
@@ -82,19 +102,19 @@ var site_url="https://nosephotobooth.com/beta/";
          </div>
         <div class="col-12 col-sm-4 ">
             <div id='share' style="display: none;">
-                <div id="download" class="btn-share">
+                <div id="download" class="btn-share wow fadeIn" data-wow-duration="2s">
                     <button class="btn-down">DOWNLOAD</button>
                 </div>
 
-                <div  class="aditional-text"> And Share with everyone</div>
+                <div  class="aditional-text wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s"> And Share with everyone</div>
                 <div class="social-container">
-                    <div id="fb" class="btn-share social-share">
+                    <div id="fb" class="btn-share social-share wow fadeIn" data-wow-duration="2s" data-wow-delay="0.5s">
                     <img src="img/simple-facebook.svg" alt="">
                     </div>
-                    <div id="twitter" class="btn-share social-share">
+                    <div id="twitter" class="btn-share social-share wow fadeIn" data-wow-duration="2s" data-wow-delay="0.7s">
                     <img src="img/awesome-twitter.svg" alt="">
                     </div>
-                    <div id="mail" class="btn-share social-share">
+                    <div id="mail" class="btn-share social-share wow fadeIn" data-wow-duration="2s" data-wow-delay="0.9s">
                         <img id="mail2" src="img/awesome-email.svg" alt="">
                     </div>
                  </div>
@@ -104,10 +124,10 @@ var site_url="https://nosephotobooth.com/beta/";
  </body>
  
  
-  <!-- <link href="css/animate.css"  rel='stylesheet' type='text/css'> -->
+  <link href="css/animate.css"  rel='stylesheet' type='text/css'>
   <!-- <script src="js/jquery-1.10.2.min.js"></script> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  <!-- <script src="js/wow.min.js"></script> -->
+  <script src="js/wow.min.js"></script>
   <script>
             
         var primarySlider, first, canvasF;
@@ -264,6 +284,7 @@ var site_url="https://nosephotobooth.com/beta/";
 
         // Put event listeners into place
         window.addEventListener("DOMContentLoaded", function() {
+            new WOW().init();
             $('#share').hide();
             // Grab elements, create settings, etc.
             canvas = document.getElementById('canvas');
