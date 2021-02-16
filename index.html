@@ -1,8 +1,10 @@
+
 <!doctype HTML>
 <html  xmlns="http://www.w3.org/1999/xhtml"
 xmlns:og="http://ogp.me/ns#"
 xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
+
     <!-- For Facebook -->
 <meta property="og:url"                content="https://booth.nosediorfilm.com/" />
 <meta property="og:type"               content="website" />
@@ -11,12 +13,33 @@ xmlns:fb="https://www.facebook.com/2008/fbml">
 <meta property="og:image"              content="https://booth.nosediorfilm.com/img/poster-prev.jpg" />
 <meta property="og:site_name" content="A SMELL GOOD MOVIE BY Clément Beauvais & Arthur de Kersauson">
 
-<title>Dior Photobooth - NOSE - A SMELL GOOD MOVIE BY Clément Beauvais & Arthur de Kersauson</title>
+<title>Dior Photo</title>
 
 <link rel="icon" href="https://nosediorfilm.com/wp-content/uploads/2020/09/lock-icon.png" sizes="32x32" />
 <link rel="icon" href="https://nosediorfilm.com/wp-content/uploads/2020/09/lock-icon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://nosediorfilm.com/wp-content/uploads/2020/09/lock-icon.png" />
 <meta name="msapplication-TileImage" content="https://nosediorfilm.com/wp-content/uploads/2020/09/lock-icon.png" />
+
+<meta charset="UTF-8">
+
+<meta name="description" content="Tomate la mejor foto con nuestros filtros!">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+
+<!-- For Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="NOSE" />
+<meta name="twitter:description" content="Inside Dior’s world of perfume" />
+<meta name="twitter:image" content="https://booth.nosediorfilm.com/img/poster-prev.jpg" />
+<meta name="twitter:image:alt" content="A SMELL GOOD MOVIE BY Clément Beauvais & Arthur de Kersauson">
+
+
+<link href="https://fonts.googleapis.com/css?family=Rubik:100,200,400,900" rel="stylesheet">
+<script src="https://kit.fontawesome.com/c3dc277a66.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css">
 
 <meta charset="UTF-8">
 
@@ -38,10 +61,6 @@ xmlns:fb="https://www.facebook.com/2008/fbml">
 <link rel="stylesheet" href="css/style.css">
 
 
-<script>
-var share_number='0';
-var site_url="https://nosephotobooth.com/beta/";
-</script>
 
 </head>
 
@@ -217,20 +236,20 @@ var site_url="https://nosephotobooth.com/beta/";
             video = document.getElementById('video');
             mediaConfig = {
                 video: {
-					width: { min: 852, ideal: 1280, max: 1920 },
-					height: { min: 480, ideal: 720, max: 1080 },
+                    width: { min: 852, ideal: 1280, max: 1920 },
+                    height: { min: 480, ideal: 720, max: 1080 },
                     facingMode: 'user'
-				}
+                }
             };
             errBack = function(e) {
                 console.log('An error has occurred!', e)
             };
             navigator.mediaDevices.getUserMedia({
-				video: {
-					width: { min: 852, ideal: 1920, max: 1920 },
-					height: { min: 480, ideal: 1080, max: 1080 },
+                video: {
+                    width: { min: 852, ideal: 1920, max: 1920 },
+                    height: { min: 480, ideal: 1080, max: 1080 },
                     facingMode: 'user'
-				}
+                }
             }).then(
                 stream => (video.srcObject = stream),
                 err => console.log(err)
@@ -394,7 +413,6 @@ var site_url="https://nosephotobooth.com/beta/";
                     photo = canvasP.toDataURL();
                     first[i].src = photo;
                     canvasF=canvasP;
-					vidup();
                 })
 
                 $('.booth').hide();
@@ -411,7 +429,17 @@ var site_url="https://nosephotobooth.com/beta/";
                     link.click();
                 });
 
+                document.getElementById('fb').addEventListener('click', function() {
+                    // vidup();
+                    window.open('https://www.facebook.com/sharer/sharer.php?u=https://booth.nosediorfilm.com/')
+                });
+                document.getElementById('twitter').addEventListener('click', function() {
+                    window.open('https://twitter.com/intent/tweet?url=https://booth.nosediorfilm.com/&text=Inside Dior’s world of perfume')
+                });
 
+                $("#mail2").wrap($('<a>',{
+                   href: 'mailto:info@example.com?&subject=&body= Hey I want to share this page with you https://booth.nosediorfilm.com/'
+                }));
 
                 document.getElementById('img')
 
@@ -527,29 +555,31 @@ var site_url="https://nosephotobooth.com/beta/";
             ctx.restore(); // Restore the last saved state
         };
 
-         function vidup () {
-             // aniscartujo 02/2021 - convert final to blob and upload
-             canvasF.toBlob(function(blob){
-                 // form data, field upimage
-                 var data = new FormData();
-                 data.append('upimage', blob);
-              
-                 // async ajax upload
-                 var xhr = new XMLHttpRequest();
-                 xhr.open('POST', "upload.min.php");
-                 xhr.onload = function(){ 
-					 share_number=this.response; //todo: if not fail do next
-					 share_url=site_url + 's.php?n=' + share_number;
-					 //add share buttons on click functions
-					document.getElementById('fb').addEventListener('click', function() {window.open('https://www.facebook.com/sharer/sharer.php?u=' + share_url)});
-					document.getElementById('twitter').addEventListener('click', function() {
-						window_twitter=window.open('https://twitter.com/intent/tweet?url=' + share_url);
-						});
-					$("#mail2").wrap($('<a>',{href: 'mailto:info@example.com?&subject=&body= Hey I want to share this page with you '+ share_url}));
-					 
-                 };
-                 xhr.send(data);
-             });
-         }
+        // function vidup () {
+        //     // aniscartujo 02/2021 - convert final to blob and upload
+        //     canvasF.toBlob(function(blob){
+        //         // form data, field upimage
+        //         var data = new FormData();
+        //         data.append('upimage', blob);
+                
+        //         // async ajax upload
+        //         var xhr = new XMLHttpRequest();
+        //         xhr.open('POST', "upload.min.php");
+        //         xhr.onload = function(){ 
+        //             url='https://www.facebook.com/sharer/sharer.php?u=https://thergbcorp.com/dior_v6/'+this.response;
+        //             window.open(url);
+        //         };
+        //         xhr.send(data);
+        //     });
+        // }
   </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CHYG4SW8S3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CHYG4SW8S3');
+</script>
 </html> 
